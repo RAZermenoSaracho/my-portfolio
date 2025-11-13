@@ -167,8 +167,8 @@ This portfolio will expand with real projects including:
 If you're hiring for a **remote software or data engineering role**, or
 want to collaborate:
 
--   **Email:** ricardozs_96@hotmail.com\
--   **LinkedIn:** https://linkedin.com/in/ricardo-zermeno\
+-   **Email:** ricardozs_96@hotmail.com
+-   **LinkedIn:** https://linkedin.com/in/ricardo-zermeno
 -   **GitHub:** https://github.com/RAZermenoSaracho
 
 ------------------------------------------------------------------------
