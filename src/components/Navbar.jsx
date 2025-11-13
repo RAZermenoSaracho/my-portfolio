@@ -18,11 +18,19 @@ function Navbar() {
         setMenuOpen(false);
     };
 
+    const handleLogoClick = (e) => {
+        e.preventDefault();
+        // Quitar hash y dejar solo "/"
+        window.history.pushState(null, '', '/');
+        // Subir al inicio
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <>
             <header className="navbar">
                 <div className="navbar-logo">
-                    <a href="/" className="logo-link">
+                    <a href="/" className="logo-link" onClick={handleLogoClick}>
                         <span className="logo-mark">{'{RZ}'}</span>
                         <span className="logo-text">Ricardo Zermeño</span>
                     </a>
