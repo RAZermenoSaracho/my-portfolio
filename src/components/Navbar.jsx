@@ -22,7 +22,7 @@ function Navbar() {
         <>
             <header className="navbar">
                 <div className="navbar-logo">
-                    <a href="/" className="logo-link" onClick={(e) => e.preventDefault()}>
+                    <a href="/" className="logo-link">
                         <span className="logo-mark">{'{RZ}'}</span>
                         <span className="logo-text">Ricardo Zermeño</span>
                     </a>
