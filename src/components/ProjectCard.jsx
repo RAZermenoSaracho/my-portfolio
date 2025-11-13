@@ -1,14 +1,26 @@
 function ProjectCard({ project }) {
     const isWeb = project.category === 'web';
-    const badgeText = project.category === 'data' ? 'Data' : 'Web Dev';
+    const badgeText = project.category === 'data' ? 'DATA' : 'WEB DEV';
 
     return (
         <div className="card">
-            <div className={`badge ${isWeb ? 'badge-alt' : ''}`}>{badgeText}</div>
-            <h3>{project.title}</h3>
-            {project.subtitle && <p className="card-subtitle">{project.subtitle}</p>}
+
+            {/* Top-right badge but not absolute */}
+            <div className="card-badge-wrapper">
+                <span className={`badge ${isWeb ? 'badge-alt' : ''}`}>
+                    {badgeText}
+                </span>
+            </div>
+
+            <h3 className="project-title">{project.title}</h3>
+
+            {project.subtitle && (
+                <p className="card-subtitle">{project.subtitle}</p>
+            )}
+
             <p className="card-meta">{project.tech}</p>
             <p>{project.description}</p>
+
             <div className="card-links">
                 {project.github && (
                     <a href={project.github} target="_blank" rel="noreferrer">
