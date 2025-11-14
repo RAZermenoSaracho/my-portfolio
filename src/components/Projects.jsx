@@ -38,13 +38,59 @@ const PROJECTS = [
         description:
             'Responsive personal portfolio to showcase experience in data and web development, featuring project filtering and smooth navigation.',
     },
+    {
+        id: 'web-todo-app',
+        category: 'software',
+        title: 'Todo App',
+        subtitle: 'Minimal task manager',
+        tech: 'Python · Tkinter · PostgreSQL',
+        description:
+            'A simple todo application to manage tasks: add, complete, and remove items. Built to practice component structure, state management, and clean UI interactions.',
+        github: 'https://github.com/RAZermenoSaracho/todo_app',
+        // demo: None,
+    },
+    {
+        id: 'odoo-quote-builder',
+        category: 'odoo',  // OR 'odoo' if you want a dedicated category
+        title: 'Quote Builder Report Link (Odoo App)',
+        subtitle: 'Odoo 18 Addon published on the official App Store',
+        tech: 'Odoo · Python · XML · QWeb · ORM',
+        description:
+            'A production-ready Odoo module that adds a direct report download button to the quotation form. Enhances the quoting workflow by linking Quote Builder PDFs with a single click. Published on the official Odoo App Store and used by real customers.',
+        appstore: 'https://apps.odoo.com/apps/modules/18.0/quote_builder_report_link'
+    },
+    {
+        id: 'software-galaga',
+        category: 'software',
+        title: 'Space Shooter Game (Galaga)',
+        subtitle: 'Arcade-style desktop game built with Python',
+        tech: 'Python · Pygame · OpenCV',
+        description:
+            'A classic arcade-style space shooter built with Python using Pygame for rendering, collisions, and audio, and OpenCV for animated video backgrounds. Features modular architecture, enemy waves, obstacles, power-ups, and win/lose game states.',
+        github: 'https://github.com/RAZermenoSaracho/galaga'
+    },
+    {
+        id: 'web-studentoverflow',
+        category: 'web',
+        title: 'StudentOverflow',
+        subtitle: 'Full-stack Q&A platform (StackOverflow clone)',
+        tech: 'Flask · PostgreSQL · Bootstrap · SQLAlchemy',
+        description:
+            'A full-stack Q&A platform inspired by StackOverflow. Built with Flask and PostgreSQL, featuring user authentication, voting, profile editing, image uploads, search, and a responsive UI. Designed to practice backend architecture, form validation, and production-ready web development.',
+        github: 'https://github.com/RAZermenoSaracho/studentoverflow',
+        demo: 'https://studentoverflow-j8tk.onrender.com/'
+    },
+
 ];
 
 const FILTERS = [
     { id: 'all', label: 'All' },
     { id: 'data', label: 'Data' },
     { id: 'web', label: 'Web Dev' },
+    { id: 'odoo', label: 'Odoo' },
+    { id: 'software', label: 'Software' },
 ];
+
 
 function Projects() {
     const [activeFilter, setActiveFilter] = useState('all');
