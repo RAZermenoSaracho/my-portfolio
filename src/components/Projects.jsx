@@ -89,7 +89,7 @@ const PROJECTS = [
         description:
             'A responsive Pokédex application with autocomplete search, dynamic theming based on Pokémon type, animated stat bars, and a random Pokémon generator. Features client-side rendering, type-based color palettes, and a clean, mobile-friendly UI.',
         github: 'https://github.com/RAZermenoSaracho/pokedex',
-        demo: 'https://pokedex-jade-alpha.vercel.app/'
+        demo: 'https://pokedex-razs.vercel.app/'
     },
 ];
 
