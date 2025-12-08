@@ -1,12 +1,16 @@
+import styles from './Contact.module.css';
+
 function Contact() {
     return (
-        <section id="contact" className="section">
+        <section id="contact" className={styles.contactSection}>
             <h2>Contact</h2>
+
             <p>
                 Feel free to reach out if you're hiring for a remote role, looking to collaborate,
                 or want more details about my experience.
             </p>
-            <ul className="contact-list">
+
+            <ul className={styles.contactList}>
                 <li>
                     <strong>Email:</strong>{' '}
                     <a href="mailto:ricardozs_96@hotmail.com">ricardozs_96@hotmail.com</a>

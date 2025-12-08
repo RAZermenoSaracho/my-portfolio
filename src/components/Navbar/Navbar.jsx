@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import styles from './Navbar.module.css';
 
 const sections = [
     { id: 'about', label: 'About' },
@@ -9,6 +10,15 @@ const sections = [
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     const handleNavClick = (target) => {
         const el = document.querySelector(target);
@@ -20,24 +30,24 @@ function Navbar() {
 
     const handleLogoClick = (e) => {
         e.preventDefault();
-        // Quitar hash y dejar solo "/"
         window.history.pushState(null, '', '/');
-        // Subir al inicio
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
         <>
-            <header className="navbar">
-                <div className="navbar-logo">
-                    <a href="/" className="logo-link" onClick={handleLogoClick}>
-                        <span className="logo-mark">{'{RZ}'}</span>
-                        <span className="logo-text">Ricardo Zermeño</span>
+            <header className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
+
+                {/* LOGO */}
+                <div>
+                    <a href="/" className={styles.logoLink} onClick={handleLogoClick}>
+                        <span className={styles.logoMark}>{'{RZ}'}</span>
+                        <span className={styles.logoText}>Ricardo Zermeño</span>
                     </a>
                 </div>
 
-                {/* Desktop nav */}
-                <nav className="navbar-links">
+                {/* DESKTOP NAV */}
+                <nav className={styles.navLinks}>
                     {sections.map((s) => (
                         <a
                             key={s.id}
@@ -52,9 +62,9 @@ function Navbar() {
                     ))}
                 </nav>
 
-                {/* Mobile hamburger */}
+                {/* MOBILE HAMBURGER */}
                 <button
-                    className="hamburger"
+                    className={styles.hamburger}
                     onClick={() => setMenuOpen((prev) => !prev)}
                     aria-label="Toggle navigation menu"
                 >
@@ -62,9 +72,9 @@ function Navbar() {
                 </button>
             </header>
 
-            {/* Mobile dropdown */}
+            {/* MOBILE MENU */}
             {menuOpen && (
-                <nav className="mobile-menu">
+                <nav className={styles.mobileMenu}>
                     {sections.map((s) => (
                         <button key={s.id} onClick={() => handleNavClick(`#${s.id}`)}>
                             {s.label}
