@@ -80,7 +80,17 @@ const PROJECTS = [
         github: 'https://github.com/RAZermenoSaracho/studentoverflow',
         demo: 'https://studentoverflow-j8tk.onrender.com/'
     },
-
+    {
+        id: 'web-pokedex',
+        category: 'web',
+        title: 'Pokédex Explorer',
+        subtitle: 'Dynamic Pokémon search interface using the PokéAPI',
+        tech: 'HTML · CSS · JavaScript · PokéAPI',
+        description:
+            'A responsive Pokédex application with autocomplete search, dynamic theming based on Pokémon type, animated stat bars, and a random Pokémon generator. Features client-side rendering, type-based color palettes, and a clean, mobile-friendly UI.',
+        github: 'https://github.com/RAZermenoSaracho/pokedex',
+        demo: 'https://pokedex-jade-alpha.vercel.app/'
+    },
 ];
 
 const FILTERS = [
