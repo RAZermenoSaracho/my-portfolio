@@ -113,29 +113,29 @@ function ProjectCard({ project }) {
             )}
 
             <div className={styles.cardLinks}>
-                {project.github && (
-                    <a href={project.github} target="_blank" rel="noreferrer">
-                        View on GitHub
-                    </a>
-                )}
-
-                {project.appstore && (
-                    <>
-                        {" · "}
-                        <a href={project.appstore} target="_blank" rel="noreferrer">
+                {[
+                    project.github && (
+                        <a key="github" href={project.github} target="_blank" rel="noreferrer">
+                            View on GitHub
+                        </a>
+                    ),
+                    project.appstore && (
+                        <a key="appstore" href={project.appstore} target="_blank" rel="noreferrer">
                             App Store
                         </a>
-                    </>
-                )}
-
-                {project.demo && (
-                    <>
-                        {" · "}
-                        <a href={project.demo} target="_blank" rel="noreferrer">
+                    ),
+                    project.demo && (
+                        <a key="demo" href={project.demo} target="_blank" rel="noreferrer">
                             Live Demo
                         </a>
-                    </>
-                )}
+                    ),
+                ]
+                    .filter(Boolean)
+                    .reduce((acc, curr, index) => {
+                        if (index > 0) acc.push(" · ");
+                        acc.push(curr);
+                        return acc;
+                    }, [])}
             </div>
         </div>
     );
