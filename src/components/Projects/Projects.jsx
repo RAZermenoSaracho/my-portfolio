@@ -23,22 +23,15 @@ function Projects() {
                 'ETL workflow that consolidates data from multiple sources, calculates KPIs, and stores them in a relational database for downstream reporting.',
         },
         {
-            id: 'web-odoo',
-            category: 'web',
-            title: 'Odoo Customization Toolkit',
-            subtitle: 'Extensions for ERP workflows',
-            tech: 'Python · Odoo · PostgreSQL',
-            description:
-                'Set of custom Odoo modules to streamline business operations: automated invoicing, project tracking, and reporting views tailored to clients.',
-        },
-        {
             id: 'web-portfolio',
             category: 'web',
             title: 'Developer Portfolio',
-            subtitle: 'This website',
+            subtitle: 'Personal website & project showcase',
             tech: 'React · Vite · CSS',
             description:
-                'Responsive personal portfolio to showcase experience in data and web development, featuring project filtering and smooth navigation.',
+                'Responsive personal portfolio showcasing projects in data, web development, and software engineering. Includes project filtering, clean UI, and smooth navigation.',
+            github: 'https://github.com/RAZermenoSaracho/my-portfolio',
+            demo: 'https://razs.vercel.app/'
         },
         {
             id: 'web-todo-app',
@@ -117,8 +110,15 @@ function Projects() {
 
     const filteredProjects =
         activeFilter === 'all'
-            ? PROJECTS
-            : PROJECTS.filter((p) => p.category === activeFilter);
+            ? [...PROJECTS].sort((a, b) => {
+                const categoryCompare = a.category.localeCompare(b.category);
+                return categoryCompare !== 0
+                    ? categoryCompare
+                    : a.title.localeCompare(b.title);
+            })
+            : [...PROJECTS]
+                .filter(p => p.category === activeFilter)
+                .sort((a, b) => a.title.localeCompare(b.title));
 
     return (
         <section id="projects" className={styles.projectsSection}>
