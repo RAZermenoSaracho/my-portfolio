@@ -92,6 +92,17 @@ function Projects() {
             github: 'https://github.com/RAZermenoSaracho/pokedex',
             demo: 'https://pokedex-razs.vercel.app/'
         },
+        {
+            id: 'web-moodflow',
+            category: 'web',
+            title: 'MoodFlow',
+            subtitle: 'Mood & Weather-based To-Do App',
+            tech: 'HTML · CSS · JavaScript · Open-Meteo API · localStorage',
+            description:
+                'A smart to-do application that adapts task suggestions based on the user’s mood and real-time weather conditions. Features full CRUD functionality, responsive design, dynamic filters, and contextual task recommendations.',
+            github: 'https://github.com/RAZermenoSaracho/mood-and-weather-based-todo-app',
+            demo: 'https://mwflow.vercel.app/'
+        },
     ];
 
     const FILTERS = [
