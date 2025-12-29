@@ -4,6 +4,7 @@ import styles from './Navbar.module.css';
 const sections = [
     { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
     { id: 'projects', label: 'Portfolio' },
     { id: 'contact', label: 'Contact' },
 ];
