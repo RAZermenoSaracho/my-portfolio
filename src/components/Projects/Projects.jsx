@@ -96,6 +96,17 @@ function Projects() {
             github: 'https://github.com/RAZermenoSaracho/mood-and-weather-based-todo-app',
             demo: 'https://mwflow.vercel.app/'
         },
+        {
+            id: 'web-real-value-marketing',
+            category: 'web',
+            title: 'Real Value Marketing',
+            subtitle: 'Lead Generation Website with CRM Integration',
+            tech: 'React · TypeScript · Vite · Node.js · Express · Odoo CRM · Vercel · Railway',
+            description:
+                'A high-conversion marketing website designed for B2B lead generation. Includes a custom Book a Call flow connected to Odoo CRM via a secure backend API, automatic contact and company creation, responsive UI, smooth animations, and production-grade deployment with custom domain and SSL.',
+            github: 'https://github.com/rvazquezme-creator/real-value-marketing',
+            demo: 'https://www.realvaluemarketing.com/'
+        },
     ];
 
     const FILTERS = [
