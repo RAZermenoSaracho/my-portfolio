@@ -107,6 +107,17 @@ function Projects() {
             github: 'https://github.com/rvazquezme-creator/real-value-marketing',
             demo: 'https://www.realvaluemarketing.com/'
         },
+        {
+            id: 'odoo-many2many-razs-widget',
+            category: 'odoo',
+            title: 'Many2many Razs Tags Widget (Odoo App)',
+            subtitle: 'Odoo 19 Addon published on the official App Store',
+            tech: 'Odoo · JavaScript · XML · SCSS · OWL',
+            description:
+                'Custom many2many widget for Odoo that renders relational fields as clean, modern tags and allows configuring which related record fields are displayed inside each tag. Published on the official Odoo App Store and compatible with all view types.',
+            appstore: 'https://apps.odoo.com/apps/modules/19.0/many2many_razs_widget',
+            github: 'https://github.com/RAZermenoSaracho/many2many_razs_widget'
+        },
     ];
 
     const FILTERS = [
