@@ -139,22 +139,25 @@ function Projects() {
     ];
 
     const [activeFilters, setActiveFilters] = useState(
-        FILTERS.map((f) => f.id)
+        FILTERS.map(f => f.id)
     );
 
     function toggleFilter(filterId) {
-        setActiveFilters((prev) =>
+        setActiveFilters(prev =>
             prev.includes(filterId)
-                ? prev.filter((f) => f !== filterId)
+                ? prev.filter(f => f !== filterId)
                 : [...prev, filterId]
         );
     }
 
     const filteredProjects = PROJECTS
-        .filter((project) =>
-            activeFilters.includes(project.category)
-        )
-        .sort((a, b) => a.title.localeCompare(b.title));
+        .filter(p => activeFilters.includes(p.category))
+        .sort((a, b) => {
+            const categoryCompare = a.category.localeCompare(b.category);
+            return categoryCompare !== 0
+                ? categoryCompare
+                : a.title.localeCompare(b.title);
+        });
 
     return (
         <section id="projects" className={styles.projectsSection}>
@@ -168,20 +171,13 @@ function Projects() {
                         Showing <strong>{filteredProjects.length}</strong>{" "}
                         project{filteredProjects.length !== 1 && "s"} in{" "}
                         {activeFilters.map((id, index) => {
-                            const filter = FILTERS.find(
-                                (f) => f.id === id
-                            );
+                            const filter = FILTERS.find(f => f.id === id);
                             return (
                                 <span key={id}>
-                                    <strong
-                                        style={{
-                                            color: filter.color,
-                                        }}
-                                    >
+                                    <strong className={styles[`label_${id}`]}>
                                         {filter.label}
                                     </strong>
-                                    {index <
-                                        activeFilters.length - 1 && ", "}
+                                    {index < activeFilters.length - 1 && ", "}
                                 </span>
                             );
                         })}
@@ -189,30 +185,17 @@ function Projects() {
                 )}
             </p>
 
-            {/* FILTER BUTTONS */}
+            {/* FILTERS */}
             <div className={styles.filters}>
-                {FILTERS.map((filter) => {
-                    const isActive = activeFilters.includes(
-                        filter.id
-                    );
+                {FILTERS.map(filter => {
+                    const isActive = activeFilters.includes(filter.id);
 
                     return (
                         <button
                             key={filter.id}
-                            onClick={() =>
-                                toggleFilter(filter.id)
-                            }
-                            className={`${styles.filterPill} ${isActive ? styles.active : ""
-                                }`}
-                            style={
-                                isActive
-                                    ? {
-                                        backgroundColor:
-                                            filter.color,
-                                        borderColor: filter.color,
-                                    }
-                                    : {}
-                            }
+                            onClick={() => toggleFilter(filter.id)}
+                            data-category={filter.id}
+                            className={`${styles.filterBtn} ${isActive ? styles.active : ""}`}
                         >
                             {filter.label}
                         </button>
@@ -222,14 +205,11 @@ function Projects() {
 
             {/* GRID */}
             <div className={styles.cardsGrid}>
-                {activeFilters.length === 0 ? null : (
-                    filteredProjects.map((project) => (
-                        <ProjectCard
-                            key={project.id}
-                            project={project}
-                        />
-                    ))
-                )}
+                {activeFilters.length === 0
+                    ? null
+                    : filteredProjects.map(project => (
+                        <ProjectCard key={project.id} project={project} />
+                    ))}
             </div>
         </section>
     );
