@@ -220,6 +220,7 @@ function Projects() {
                             <ProjectCard
                                 key={project.id}
                                 project={project}
+                                categoryLabel={categoryConfig?.label}
                                 categoryColor={categoryConfig?.color}
                             />
                         );

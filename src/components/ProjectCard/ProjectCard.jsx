@@ -13,7 +13,7 @@ const LANGUAGE_COLORS = {
     default: "#999999",
 };
 
-function ProjectCard({ project, categoryColor }) {
+function ProjectCard({ project, categoryColor, categoryLabel }) {
     const { category, github } = project;
     const [languages, setLanguages] = useState(null);
 
@@ -56,7 +56,7 @@ function ProjectCard({ project, categoryColor }) {
                     className={styles.badge}
                     style={{ "--badge-color": categoryColor }}
                 >
-                    {category.toUpperCase()}
+                    {categoryLabel?.toUpperCase() || category.toUpperCase()}
                 </span>
             </div>
 
