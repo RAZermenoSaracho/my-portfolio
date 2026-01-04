@@ -126,7 +126,7 @@ function Projects() {
             tech: 'Python · Pandas · SQL · Scikit-learn · Plotly · Dash · Render',
             description:
                 'End-to-end data science project analyzing SpaceX Falcon 9 launch data to predict first-stage landing success. Covers data collection via API and web scraping, data cleaning, exploratory analysis (SQL & visualization), machine learning modeling, and deployment of a live interactive dashboard using Plotly Dash.',
-            live: 'https://spacex-falcon9-landing-prediction-zve7.onrender.com/',
+            demo: 'https://spacex-falcon9-landing-prediction-zve7.onrender.com/',
             github: 'https://github.com/RAZermenoSaracho/spacex-falcon9-landing-prediction'
         },
     ];
