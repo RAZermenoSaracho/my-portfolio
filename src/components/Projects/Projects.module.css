@@ -84,3 +84,22 @@
         padding: 0.5rem 1rem;
     }
 }
+
+.filterPill {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid #2a2a2d;
+    background: transparent;
+    color: #d1d5db;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filterPill:hover {
+    background: #2a2a2d;
+}
+
+.filterPill.active {
+    color: white;
+}
