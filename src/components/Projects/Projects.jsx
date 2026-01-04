@@ -4,24 +4,24 @@ import styles from './Projects.module.css';
 
 function Projects() {
     const PROJECTS = [
-        {
-            id: 'data-eda',
-            category: 'data',
-            title: 'Financial Data Explorer',
-            subtitle: 'Exploratory data analysis & dashboards',
-            tech: 'Python · Pandas · Plotly · SQL',
-            description:
-                'End-to-end analysis pipeline for financial time-series: cleaning, feature engineering, and interactive dashboards to explore patterns and trends.',
-        },
-        {
-            id: 'data-etl',
-            category: 'data',
-            title: 'ETL Pipeline for Business Metrics',
-            subtitle: 'Automated reporting',
-            tech: 'Python · Airflow (or cron) · PostgreSQL',
-            description:
-                'ETL workflow that consolidates data from multiple sources, calculates KPIs, and stores them in a relational database for downstream reporting.',
-        },
+        // {
+        //     id: 'data-eda',
+        //     category: 'data',
+        //     title: 'Financial Data Explorer',
+        //     subtitle: 'Exploratory data analysis & dashboards',
+        //     tech: 'Python · Pandas · Plotly · SQL',
+        //     description:
+        //         'End-to-end analysis pipeline for financial time-series: cleaning, feature engineering, and interactive dashboards to explore patterns and trends.',
+        // },
+        // {
+        //     id: 'data-etl',
+        //     category: 'data',
+        //     title: 'ETL Pipeline for Business Metrics',
+        //     subtitle: 'Automated reporting',
+        //     tech: 'Python · Airflow (or cron) · PostgreSQL',
+        //     description:
+        //         'ETL workflow that consolidates data from multiple sources, calculates KPIs, and stores them in a relational database for downstream reporting.',
+        // },
         {
             id: 'web-portfolio',
             category: 'web',
@@ -117,6 +117,17 @@ function Projects() {
                 'Custom many2many widget for Odoo that renders relational fields as clean, modern tags and allows configuring which related record fields are displayed inside each tag. Published on the official Odoo App Store and compatible with all view types.',
             appstore: 'https://apps.odoo.com/apps/modules/19.0/many2many_razs_widget',
             github: 'https://github.com/RAZermenoSaracho/many2many_razs_widget'
+        },
+        {
+            id: 'spacex-falcon9-landing-prediction',
+            category: 'data',
+            title: 'SpaceX Falcon 9 Landing Prediction',
+            subtitle: 'End-to-end Data Science project with live interactive dashboard',
+            tech: 'Python · Pandas · SQL · Scikit-learn · Plotly · Dash · Render',
+            description:
+                'End-to-end data science project analyzing SpaceX Falcon 9 launch data to predict first-stage landing success. Covers data collection via API and web scraping, data cleaning, exploratory analysis (SQL & visualization), machine learning modeling, and deployment of a live interactive dashboard using Plotly Dash.',
+            live: 'https://spacex-falcon9-landing-prediction-zve7.onrender.com/',
+            github: 'https://github.com/RAZermenoSaracho/spacex-falcon9-landing-prediction'
         },
     ];
 
