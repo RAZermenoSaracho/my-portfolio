@@ -10,19 +10,11 @@ const LANGUAGE_COLORS = {
     TypeScript: "#2b7489",
     JupyterNotebook: "#DA5B0B",
     Markdown: "#083fa1",
-    default: "#999999"
+    default: "#999999",
 };
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, categoryColor }) {
     const { category, github } = project;
-
-    // Badge label
-    let badgeText = "";
-    if (category === "data") badgeText = "DATA";
-    else if (category === "web") badgeText = "WEB DEV";
-    else if (category === "odoo") badgeText = "ODOO";
-    else if (category === "software") badgeText = "SOFTWARE";
-
     const [languages, setLanguages] = useState(null);
 
     useEffect(() => {
@@ -38,7 +30,6 @@ function ProjectCard({ project }) {
                 if (!res.ok) return;
 
                 const data = await res.json();
-
                 const total = Object.values(data).reduce((a, b) => a + b, 0);
 
                 const percentData = Object.entries(data)
@@ -59,26 +50,26 @@ function ProjectCard({ project }) {
 
     return (
         <div className={styles.card}>
+            {/* CATEGORY BADGE */}
             <div className={styles.cardBadgeWrapper}>
                 <span
-                    className={`${styles.badge} 
-                    ${category === "web" ? styles.badgeWeb : ""} 
-                    ${category === "data" ? styles.badgeData : ""} 
-                    ${category === "odoo" ? styles.badgeOdoo : ""} 
-                    ${category === "software" ? styles.badgeSoftware : ""}`}
+                    className={styles.badge}
+                    style={{ "--badge-color": categoryColor }}
                 >
-                    {badgeText}
+                    {category.toUpperCase()}
                 </span>
             </div>
 
             <h3 className={styles.projectTitle}>{project.title}</h3>
 
-            {project.subtitle && <p className={styles.cardSubtitle}>{project.subtitle}</p>}
+            {project.subtitle && (
+                <p className={styles.cardSubtitle}>{project.subtitle}</p>
+            )}
 
             <p className={styles.cardMeta}>{project.tech}</p>
             <p className={styles.description}>{project.description}</p>
 
-            {/* Unified GitHub Language Bar */}
+            {/* GitHub Languages */}
             {languages && (
                 <div className={styles.langSection}>
                     <div className={styles.langBarUnified}>
@@ -88,9 +79,10 @@ function ProjectCard({ project }) {
                                 className={styles.langBarSegment}
                                 style={{
                                     width: `${percent}%`,
-                                    backgroundColor: LANGUAGE_COLORS[lang] || LANGUAGE_COLORS.default,
+                                    backgroundColor:
+                                        LANGUAGE_COLORS[lang] || LANGUAGE_COLORS.default,
                                 }}
-                            ></div>
+                            />
                         ))}
                     </div>
 
@@ -103,29 +95,47 @@ function ProjectCard({ project }) {
                                         backgroundColor:
                                             LANGUAGE_COLORS[lang] || LANGUAGE_COLORS.default,
                                     }}
-                                ></span>
+                                />
                                 <span className={styles.langLegendLabel}>{lang}</span>
-                                <span className={styles.langLegendPercent}>{percent}%</span>
+                                <span className={styles.langLegendPercent}>
+                                    {percent}%
+                                </span>
                             </div>
                         ))}
                     </div>
                 </div>
             )}
 
+            {/* LINKS */}
             <div className={styles.cardLinks}>
                 {[
                     project.github && (
-                        <a key="github" href={project.github} target="_blank" rel="noreferrer">
+                        <a
+                            key="github"
+                            href={project.github}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             View on GitHub
                         </a>
                     ),
                     project.appstore && (
-                        <a key="appstore" href={project.appstore} target="_blank" rel="noreferrer">
+                        <a
+                            key="appstore"
+                            href={project.appstore}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             App Store
                         </a>
                     ),
                     project.demo && (
-                        <a key="demo" href={project.demo} target="_blank" rel="noreferrer">
+                        <a
+                            key="demo"
+                            href={project.demo}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             Live Demo
                         </a>
                     ),

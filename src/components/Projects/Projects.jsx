@@ -131,7 +131,7 @@ function Projects() {
         },
     ];
 
-    const FILTERS = [
+    const CATEGORIES = [
         { id: "data", label: "Data", color: "#10b981" },
         { id: "web", label: "Web Dev", color: "#3b82f6" },
         { id: "odoo", label: "Odoo", color: "#a855f7" },
@@ -139,7 +139,7 @@ function Projects() {
     ];
 
     const [activeFilters, setActiveFilters] = useState(
-        FILTERS.map(f => f.id)
+        CATEGORIES.map(f => f.id)
     );
 
     function toggleFilter(filterId) {
@@ -171,7 +171,7 @@ function Projects() {
                         Showing <strong>{filteredProjects.length}</strong>{" "}
                         project{filteredProjects.length !== 1 && "s"} in{" "}
                         {activeFilters.map((id, index) => {
-                            const filter = FILTERS.find(f => f.id === id);
+                            const filter = CATEGORIES.find(f => f.id === id);
                             return (
                                 <span key={id}>
                                     <strong className={styles[`label_${id}`]}>
@@ -187,15 +187,19 @@ function Projects() {
 
             {/* FILTERS */}
             <div className={styles.filters}>
-                {FILTERS.map(filter => {
+                {CATEGORIES.map(filter => {
                     const isActive = activeFilters.includes(filter.id);
 
                     return (
                         <button
                             key={filter.id}
                             onClick={() => toggleFilter(filter.id)}
+                            className={`${styles.filterBtn} ${isActive ? styles.active : ""
+                                }`}
                             data-category={filter.id}
-                            className={`${styles.filterBtn} ${isActive ? styles.active : ""}`}
+                            style={{
+                                "--filter-color": filter.color,
+                            }}
                         >
                             {filter.label}
                         </button>
@@ -207,9 +211,19 @@ function Projects() {
             <div className={styles.cardsGrid}>
                 {activeFilters.length === 0
                     ? null
-                    : filteredProjects.map(project => (
-                        <ProjectCard key={project.id} project={project} />
-                    ))}
+                    : filteredProjects.map(project => {
+                        const categoryConfig = CATEGORIES.find(
+                            c => c.id === project.category
+                        );
+
+                        return (
+                            <ProjectCard
+                                key={project.id}
+                                project={project}
+                                categoryColor={categoryConfig?.color}
+                            />
+                        );
+                    })}
             </div>
         </section>
     );
