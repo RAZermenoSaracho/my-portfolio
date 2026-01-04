@@ -174,7 +174,7 @@ function Projects() {
                             const filter = CATEGORIES.find(f => f.id === id);
                             return (
                                 <span key={id}>
-                                    <strong className={styles[`label_${id}`]}>
+                                    <strong style={{ color: filter.color }}>
                                         {filter.label}
                                     </strong>
                                     {index < activeFilters.length - 1 && ", "}
