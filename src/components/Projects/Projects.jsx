@@ -129,6 +129,17 @@ function Projects() {
             demo: 'https://spacex-falcon9-landing-prediction-zve7.onrender.com/',
             github: 'https://github.com/RAZermenoSaracho/spacex-falcon9-landing-prediction'
         },
+        {
+            id: 'web-react-min-handbook',
+            category: 'web',
+            title: 'React Minimal Handbook',
+            subtitle: 'Interactive Guide to Core React Concepts',
+            tech: 'React · TypeScript · Vite · Tailwind CSS · React Router · WebSockets · REST APIs · Vercel',
+            description:
+                'A hands-on React learning application built as a living handbook for core React concepts. The project covers JSX, components, props, state, hooks, Context API, and side effects with real-world examples. Includes live HTTP data fetching, real-time WebSocket updates from public crypto APIs, visual explanations, and production-ready deployment.',
+            github: 'https://github.com/RAZermenoSaracho/react-min-handbook',
+            demo: 'https://react-min-handbook.vercel.app/'
+        },
     ];
 
     const CATEGORIES = [
