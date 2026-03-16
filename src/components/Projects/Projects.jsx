@@ -140,6 +140,16 @@ function Projects() {
             github: 'https://github.com/RAZermenoSaracho/react-min-handbook',
             demo: 'https://react-min-handbook.vercel.app/'
         },
+        {
+            id: 'web-quantlab',
+            category: 'software',
+            title: 'QuantLab',
+            subtitle: 'Algorithmic Trading Strategy Lab',
+            tech: 'React · TypeScript · Node.js · Express · Python · PostgreSQL',
+            description:
+                'Full-stack platform for building, backtesting, and optimizing algorithmic trading strategies. Features a deterministic Python trading engine, historical backtesting, paper trading simulation, and a parameter optimizer that automatically evaluates multiple strategy configurations. Built with a modular architecture using shared TypeScript contracts between frontend and backend.',
+            github: 'https://github.com/RAZermenoSaracho/quantlab'
+        },
     ];
 
     const CATEGORIES = [
