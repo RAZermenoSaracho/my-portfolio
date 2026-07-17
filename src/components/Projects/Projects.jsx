@@ -25,6 +25,7 @@ function Projects() {
         { id: "web", label: "Web Dev", color: "#3b82f6" },
         { id: "odoo", label: "Odoo", color: "#a855f7" },
         { id: "software", label: "Software", color: "#f59e0b" },
+        { id: "blockchain", label: "Blockchain", color: "#f16363" },
     ];
 
     const [activeFilters, setActiveFilters] = useState(
