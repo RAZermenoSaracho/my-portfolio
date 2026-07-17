@@ -46,7 +46,7 @@ function Projects() {
             const priorityB = b.priority ?? 0;
 
             if (priorityA !== priorityB) {
-                return priorityB - priorityA; // mayor priority primero
+                return priorityB - priorityA;
             }
 
             const categoryCompare = a.category.localeCompare(b.category);
