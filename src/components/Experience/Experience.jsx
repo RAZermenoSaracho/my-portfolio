@@ -2,27 +2,38 @@ import styles from "./Experience.module.css";
 
 const experienceData = [
     {
-        id: "vive-ramzsa",
-        role: "Civil Engineer",
-        company: "Vive RAMZSA SA DE CV",
+        id: "capital-one",
+        role: "Software Engineer",
+        company: "Capital One",
         link: null,
-        meta: "Project management · AutoCAD · Revit · Budgeting",
+        meta: "2026 – Present · Backend · APIs · Cloud Engineering · Fintech",
         description: [
-            "Led and coordinated construction projects, managing cross-functional teams, cost control, technical documentation, and client communication.",
-            "Worked closely with architects, contractors, and stakeholders to ensure project quality, timelines, and budgets were met.",
-            "Applied engineering principles to solve on-site construction challenges and optimize execution processes."
+            "Develop backend software in a fintech environment, contributing to APIs, financial systems, and cloud engineering.",
+            "Collaborate on delivering production-grade software with modern practices: testing, CI/CD, code reviews, Agile.",
+            "Apply backend, database, API, and systems-thinking expertise to build reliable and scalable financial software."
         ]
     },
     {
         id: "odoo-support",
-        role: "Functional and Technical Support Analyst",
+        role: "Functional & Technical Support Engineer",
         company: "Odoo",
         link: "https://www.odoo.com",
-        meta: "Python · Odoo Framework · Business Process Automation · ERP Systems",
+        meta: "12/2023 – 04/2026 · Python · PostgreSQL · XML · QWeb",
         description: [
-            "Provided functional and technical support during Odoo implementations, aligning client business processes with ERP solutions.",
-            "Developed and customized Odoo modules, automated workflows, and resolved complex system issues using Python and the Odoo framework.",
-            "Collaborated directly with clients and internal teams to analyze requirements, propose solutions, and ensure successful deployments."
+            "Developed and customized ERP solutions using Python, PostgreSQL, XML, and QWeb.",
+            "Diagnosed and resolved complex production issues through SQL analysis, log investigation, and business process validation.",
+            "Collaborated with developers and consultants to deliver scalable solutions for international clients."
+        ]
+    },
+    {
+        id: "vive-ramzsa",
+        role: "Project Manager",
+        company: "VIVE RAMZSA SA DE CV",
+        link: null,
+        meta: "2021 – 2023 · Construction & Real Estate · Team Leadership",
+        description: [
+            "Managed construction and real estate projects: budgeting, scheduling, execution, and stakeholder coordination.",
+            "Led multidisciplinary teams of up to 20 people (engineering, architecture, contractors, suppliers)."
         ]
     }
 ];

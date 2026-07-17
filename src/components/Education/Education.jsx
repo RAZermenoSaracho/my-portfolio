@@ -2,40 +2,46 @@ import styles from "./Education.module.css";
 
 const educationData = [
     {
-        id: "civil-engineering-unam",
-        degree: "Bachelor of Civil Engineering",
-        institution: "National Autonomous University of Mexico (UNAM)",
-        meta: "Faculty of Engineering · Graduated",
-        link: "https://www.ingenieria.unam.mx/programas_academicos/licenciatura/civil.php",
-        description: [
-            "Formal education in structural engineering, construction management, hydraulics, and project planning.",
-            "Developed strong analytical thinking, problem-solving skills, and a solid foundation in engineering mathematics and physics.",
-            "Participated in academic projects focused on real-world infrastructure and construction challenges."
-        ]
+        id: "metana-web3-bootcamp",
+        degree: "Full Stack & Web3 Solidity Bootcamp",
+        institution: "Metana",
+        meta: "In progress · Expected completion August 2026",
+        link: "https://metana.io/web3-beginner-bootcamp/",
+        description: []
     },
     {
         id: "software-engineering-hybridge",
-        degree: "Bachelor of Software Engineering",
+        degree: "B.Sc. Software Engineering",
         institution: "Hybridge Education",
         meta: "In progress",
         link: "https://hybridge.education/ingenieria-en-software/",
-        description: [
-            "Focused on software architecture, algorithms, data structures, and full-stack web development.",
-            "Hands-on experience building real-world applications using modern JavaScript frameworks and backend technologies.",
-            "Strong emphasis on problem-solving, clean code, and industry best practices."
-        ]
+        description: []
     },
     {
-        id: "metana-web3-bootcamp",
-        degree: "Fullstack Web3 Beginner Bootcamp",
-        institution: "Metana",
-        meta: "Completed",
-        link: "https://metana.io/web3-beginner-bootcamp/",
-        description: [
-            "Intensive bootcamp covering Web3 fundamentals, blockchain concepts, and decentralized application development.",
-            "Built full-stack projects integrating smart contracts, frontend interfaces, and Web3 tooling.",
-            "Gained practical experience with modern JavaScript, blockchain workflows, and emerging Web3 technologies."
-        ]
+        id: "civil-engineering-unam",
+        degree: "B.Sc. Civil Engineering",
+        institution: "Universidad Nacional Autónoma de México (UNAM)",
+        meta: "2017 – 2021",
+        link: "https://www.ingenieria.unam.mx/programas_academicos/licenciatura/civil.php",
+        description: []
+    }
+];
+
+const certificationsData = [
+    {
+        id: "ibm-data-science",
+        name: "IBM Data Science Professional Certificate",
+        issuer: "IBM"
+    },
+    {
+        id: "autodesk-revit",
+        name: "Autodesk Revit Structure Certified Professional",
+        issuer: "Autodesk"
+    },
+    {
+        id: "ef-set-english",
+        name: "EF SET English Proficiency (C2)",
+        issuer: "EF SET"
     }
 ];
 
@@ -68,6 +74,18 @@ function Education() {
                     </div>
                 ))}
             </div>
+
+            <h3 className={styles.subheading}>Certifications</h3>
+            <div className={styles.certList}>
+                {certificationsData.map(cert => (
+                    <div key={cert.id} className={styles.certItem}>
+                        <strong>{cert.name}</strong> — {cert.issuer}
+                    </div>
+                ))}
+            </div>
+
+            <h3 className={styles.subheading}>Languages</h3>
+            <p className={styles.languages}>Spanish (Native) · English (C2 / Professional)</p>
         </section>
     );
 }
