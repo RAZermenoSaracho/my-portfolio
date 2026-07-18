@@ -68,6 +68,14 @@
     text-decoration: none;
     transition: all 0.25s ease;
     font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* Primary button */
@@ -103,6 +111,13 @@
     border-color: #6b7280;
     color: #e5e7eb;
     transform: translateY(-2px);
+}
+
+.cvError {
+    color: #f87171;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 /* MOBILE */

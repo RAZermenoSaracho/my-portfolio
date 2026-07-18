@@ -1,23 +1,51 @@
+import { useState } from "react";
 import styles from "./Hero.module.css";
 
+const CV_API_URL = "https://cv-api.razs.dev/cv";
+
 function Hero() {
+    const [cvStatus, setCvStatus] = useState("idle"); // idle | loading | error
+
+    const handleDownloadCV = async (e) => {
+        e.preventDefault();
+        setCvStatus("loading");
+
+        try {
+            const response = await fetch(CV_API_URL);
+            if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+
+            const blob = await response.blob();
+            const blobUrl = window.URL.createObjectURL(blob);
+
+            const link = document.createElement("a");
+            link.href = blobUrl;
+            link.download = "Ricardo-Zermeno-CV.pdf";
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            window.URL.revokeObjectURL(blobUrl);
+
+            setCvStatus("idle");
+        } catch (err) {
+            setCvStatus("error");
+        }
+    };
+
     return (
         <section className={styles.hero}>
             <div className={styles.heroContent}>
 
-                <p className={styles.heroTagline}>Civil Engineer · Software Engineer</p>
+                <p className={styles.heroTagline}>Software Engineer — DeFi & Quantitative Systems</p>
 
                 <h1 className={styles.heroTitle}>
-                    I build solutions in{" "}
-                    <span className={styles.highlight}>data</span> and{" "}
-                    <span className={styles.highlight}>web development</span>.
+                    I build backend systems for{" "}
+                    <span className={styles.highlight}>DeFi</span> and{" "}
+                    <span className={styles.highlight}>quantitative finance</span>.
                 </h1>
 
                 <p className={styles.heroSubtitle}>
-                    With a background in civil engineering and hands-on experience in software development,
-                    I bridge analytical thinking with technical problem-solving. I build data-driven systems,
-                    automation tools, and modern web applications. Open to remote roles where I can deliver
-                    high-impact engineering work.
+                    Software Engineer with experience in backend financial systems, REST APIs, and
+                    quantitative technologies. Currently at Capital One Mexico.
                 </p>
 
                 <div className={styles.heroActions}>
@@ -29,14 +57,21 @@ function Hero() {
                         View Resume
                     </a>
 
-                    <a
+                    <button
+                        type="button"
                         className={`${styles.btn} ${styles.ghost}`}
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
+                        onClick={handleDownloadCV}
+                        disabled={cvStatus === "loading"}
                     >
-                        Download CV (coming soon)
-                    </a>
+                        {cvStatus === "loading" ? "Downloading…" : "Download CV"}
+                    </button>
                 </div>
+
+                {cvStatus === "error" && (
+                    <p className={styles.cvError}>
+                        Couldn't download the CV right now. Please try again later.
+                    </p>
+                )}
             </div>
         </section>
     );
