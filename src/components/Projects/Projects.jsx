@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ProjectCard from '../ProjectCard/ProjectCard';
+import LanguageBreakdown from '../LanguageBreakdown/LanguageBreakdown';
 import styles from './Projects.module.css';
 
 const PROJECTS_API_URL = 'https://projects.razs.dev/';
@@ -103,6 +104,8 @@ function Projects() {
                     </>
                 )}
             </p>
+
+            <LanguageBreakdown repos={filteredProjects.map(p => p.github)} />
 
             {/* FILTERS */}
             <div className={styles.filters}>

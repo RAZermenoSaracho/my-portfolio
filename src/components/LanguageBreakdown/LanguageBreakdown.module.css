@@ -1,0 +1,43 @@
+/* GITHUB LANG BAR */
+.langSection {
+    margin: 1.2rem 0;
+}
+
+.langBarUnified {
+    display: flex;
+    height: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 0.6rem;
+}
+
+.langBarSegment {
+    height: 100%;
+}
+
+/* LEGEND */
+.langLegend {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.langLegendRow {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #d1d5db;
+}
+
+.langDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.langLegendPercent {
+    margin-left: 4px;
+    color: #9ca3af;
+    font-size: 0.8rem;
+}

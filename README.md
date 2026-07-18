@@ -12,15 +12,7 @@ SQL, Odoo, and modern frontend technologies.
 
 ## 🔗 **Live Demo**
 
-👉 https://your-portfolio-domain.com\
-*(Replace with your Vercel or GitHub Pages URL)*
-
-------------------------------------------------------------------------
-
-## 🖼️ **Screenshot**
-
-![Portfolio Screenshot](./screenshot.png)\
-*Add your own screenshot here or replace with a link.*
+👉 https://razs.dev
 
 ------------------------------------------------------------------------
 
@@ -133,32 +125,6 @@ Preview built site:
 ``` bash
 npm run preview
 ```
-
-------------------------------------------------------------------------
-
-## 🚀 Deployment
-
-### **Recommended: Vercel (1 click)**
-
-1.  Go to https://vercel.com
-2.  Import your GitHub repo
-3.  Deploy → Vercel auto-detects Vite
-4.  Done ✔️
-
-Alternatively, you can use GitHub Pages, Netlify, or any static hosting.
-
-------------------------------------------------------------------------
-
-## 📌 **Upcoming Additions**
-
-This portfolio will expand with real projects including:
-
--   Data workflows and EDA projects\
--   Odoo automation tools\
--   Web dashboards\
--   Trading bots\
--   REST/GraphQL APIs\
--   Visualization pipelines
 
 ------------------------------------------------------------------------
 

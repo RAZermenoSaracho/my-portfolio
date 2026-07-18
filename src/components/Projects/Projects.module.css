@@ -25,41 +25,6 @@
     margin-bottom: 2rem;
 }
 
-/* OLD FILTER BUTTONS */
-
-/* .filters {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.filterBtn {
-    padding: 0.55rem 1.2rem;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    cursor: pointer;
-
-    background: #1f2937;
-    color: #9ca3af;
-    border: 1px solid #374151;
-
-    transition: all 0.25s ease;
-}
-
-.filterBtn:hover {
-    color: #e5e7eb;
-    border-color: #4b5563;
-}
-
-.active {
-    background: linear-gradient(to right, #4ade80, #3b82f6);
-    color: white !important;
-    border-color: transparent;
-    box-shadow: 0 0 12px rgba(79, 70, 229, 0.35);
-    transform: translateY(-2px);
-} */
-
 /* GRID */
 
 .cardsGrid {
