@@ -5,11 +5,13 @@
       <stop offset="100%" stop-color="#4CD98B"/>
     </linearGradient>
   </defs>
-  <text x="200" y="115"
+  <text x="200" y="135"
         font-family="'Courier New', 'SF Mono', Consolas, monospace"
-        font-size="72"
+        font-size="190"
         font-weight="600"
         fill="url(#rzGradient)"
         text-anchor="middle"
-        letter-spacing="2">{RZ}</text>
+        letter-spacing="0">
+        {RZ}
+  </text>
 </svg>
