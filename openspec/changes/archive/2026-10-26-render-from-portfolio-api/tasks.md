@@ -24,5 +24,5 @@
 ## 4. Rollout
 
 - [x] 4.1 Owner approves the PR; merge to `main` (Vercel auto-deploys)
-- [ ] 4.2 Re-run the parity script against production; edit a field in Odoo and confirm it appears within ~5 minutes without a deploy
+- [x] 4.2 Re-run the parity script against production; edit a field in Odoo and confirm it appears within ~5 minutes without a deploy (owner manually verified 2026-10-26: Odoo public field edit appeared on razs.dev without redeploy)
 - [x] 4.3 Report production parity as verified (unblocks `retire-portfolio-data`)
