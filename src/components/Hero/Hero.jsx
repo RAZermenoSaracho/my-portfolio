@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Hero.module.css";
 
-const CV_API_URL = "https://cv-api.razs.dev/cv";
+const CV_API_URL = "https://projects.razs.dev/cv";
 
 function Hero() {
     const [cvStatus, setCvStatus] = useState("idle"); // idle | loading | error
