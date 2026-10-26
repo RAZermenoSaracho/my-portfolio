@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Content from the portfolio API
-The site SHALL fetch `https://projects.razs.dev/portfolio` once at the App level and render Navbar, Hero, About, Skills, Experience, Education (with certifications and languages), Projects, Contact and Footer from that data, with the visual design unchanged. Page content SHALL NOT be hardcoded in the bundle.
+The site SHALL fetch `https://projects.razs.dev/portfolio` once at the App level and render Navbar, Hero, About (including Skills), Experience, Education (with certifications and languages), Projects, Contact and Footer from that data, with the visual design unchanged. Page content SHALL NOT be hardcoded in the bundle.
 
 #### Scenario: Odoo edit goes live without deploy
 - **WHEN** a field is edited in Odoo
