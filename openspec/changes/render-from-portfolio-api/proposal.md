@@ -29,4 +29,4 @@ None (`cv-download-button` unchanged).
 
 - `src/App.jsx`, new `src/hooks/usePortfolio.js` (or context file), all section components, `Projects.jsx`; a parity script outside the shipped bundle.
 - Depends on: razs_jobs import parity check done and `portfolio-api` `/portfolio` deployed, before this merges (merge to `main` auto-deploys to Vercel).
-- Rollback: revert the merge commit on `main` (Vercel redeploys the hardcoded version).
+- Rollback runs in reverse order: (1) revert my-portfolio first; (2) then revert portfolio-api, which restores `SOURCE_URL` and requires portfolio-data to be unarchived (if already archived, run `gh repo unarchive RAZermenoSaracho/portfolio-data` first); (3) the razs_jobs fields can stay, set `is_public=False` if needed.
