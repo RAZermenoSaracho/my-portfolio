@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
+import { shortName } from '../../utils/emphasis';
 
 const sections = [
     { id: 'about', label: 'About' },
@@ -9,7 +10,7 @@ const sections = [
     { id: 'contact', label: 'Contact' },
 ];
 
-function Navbar() {
+function Navbar({ profile }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -43,7 +44,7 @@ function Navbar() {
                 <div>
                     <a href="/" className={styles.logoLink} onClick={handleLogoClick}>
                         <span className={styles.logoMark}>{'{RZ}'}</span>
-                        <span className={styles.logoText}>Ricardo Zermeño</span>
+                        <span className={styles.logoText}>{shortName(profile?.name)}</span>
                     </a>
                 </div>
 
