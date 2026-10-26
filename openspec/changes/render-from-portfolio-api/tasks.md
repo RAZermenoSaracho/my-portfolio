@@ -6,7 +6,7 @@
 ## 2. Implementation
 
 - [ ] 2.1 `usePortfolio()` hook + loading/error/retry; fetch once in `App`
-- [ ] 2.2 Navbar, Hero, About, Skills, Experience, Education (certifications, languages), Contact, Footer render from props with unchanged markup and CSS
+- [ ] 2.2 Navbar, Hero, About (incl. Skills), Experience, Education (certifications, languages), Contact, Footer render from props with unchanged markup and CSS
 - [ ] 2.3 Projects reads `portfolio.projects`; keep `CATEGORIES`, filter and sort; remove its own fetch; `ProjectCard` unchanged
 - [ ] 2.4 Loading placeholders and minimal error state that keep layout; no hardcoded content fallback
 - [ ] 2.5 CV button and `LanguageBreakdown` untouched
