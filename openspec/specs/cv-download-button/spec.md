@@ -1,7 +1,7 @@
 # cv-download-button Specification
 
 ## Purpose
-TBD - created by archiving change use-portfolio-cv-endpoint. Update Purpose after archive.
+Defines how the Hero Download CV button fetches and saves the CV from the portfolio API.
 
 ## Requirements
 
