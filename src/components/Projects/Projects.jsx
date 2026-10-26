@@ -1,26 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ProjectCard from '../ProjectCard/ProjectCard';
 import LanguageBreakdown from '../LanguageBreakdown/LanguageBreakdown';
 import styles from './Projects.module.css';
 
-const PROJECTS_API_URL = 'https://projects.razs.dev/';
-
-function Projects() {
-    const [PROJECTS, setPROJECTS] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        fetch(PROJECTS_API_URL)
-            .then(res => {
-                if (!res.ok) throw new Error(`Request failed: ${res.status}`);
-                return res.json();
-            })
-            .then(data => setPROJECTS(data))
-            .catch(err => setError(err))
-            .finally(() => setLoading(false));
-    }, []);
-
+function Projects({ projects: PROJECTS }) {
     const CATEGORIES = [
         { id: "data", label: "Data", color: "#10b981" },
         { id: "web", label: "Web Dev", color: "#3b82f6" },
@@ -58,26 +41,6 @@ function Projects() {
 
             return a.title.localeCompare(b.title);
         });
-
-    if (loading) {
-        return (
-            <section id="projects" className={styles.projectsSection}>
-                <h2>Portfolio</h2>
-                <p className={styles.sectionIntro}>Loading projects...</p>
-            </section>
-        );
-    }
-
-    if (error) {
-        return (
-            <section id="projects" className={styles.projectsSection}>
-                <h2>Portfolio</h2>
-                <p className={styles.sectionIntro}>
-                    Couldn't load projects right now. Please try again later.
-                </p>
-            </section>
-        );
-    }
 
     return (
         <section id="projects" className={styles.projectsSection}>
