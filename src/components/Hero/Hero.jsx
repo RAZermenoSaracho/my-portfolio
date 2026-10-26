@@ -1,9 +1,10 @@
 import { useState } from "react";
 import styles from "./Hero.module.css";
+import emphasize from "../../utils/emphasis";
 
 const CV_API_URL = "https://projects.razs.dev/cv";
 
-function Hero() {
+function Hero({ profile }) {
     const [cvStatus, setCvStatus] = useState("idle"); // idle | loading | error
 
     const handleDownloadCV = async (e) => {
@@ -35,18 +36,19 @@ function Hero() {
         <section className={styles.hero}>
             <div className={styles.heroContent}>
 
-                <p className={styles.heroTagline}>Software Engineer — DeFi & Quantitative Systems</p>
+                {profile && (
+                    <>
+                        <p className={styles.heroTagline}>{profile.tagline}</p>
 
-                <h1 className={styles.heroTitle}>
-                    I build backend systems for{" "}
-                    <span className={styles.highlight}>DeFi</span> and{" "}
-                    <span className={styles.highlight}>quantitative finance</span>.
-                </h1>
+                        <h1 className={styles.heroTitle}>
+                            {emphasize(profile.headline, ({ children }) => (
+                                <span className={styles.highlight}>{children}</span>
+                            ))}
+                        </h1>
 
-                <p className={styles.heroSubtitle}>
-                    Software Engineer with experience in backend financial systems, REST APIs, and
-                    quantitative technologies. Currently at Capital One Mexico.
-                </p>
+                        <p className={styles.heroSubtitle}>{profile.intro}</p>
+                    </>
+                )}
 
                 <div className={styles.heroActions}>
                     <a className={`${styles.btn} ${styles.primary}`} href="#projects">

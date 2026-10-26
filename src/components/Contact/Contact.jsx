@@ -1,6 +1,6 @@
 import styles from './Contact.module.css';
 
-function Contact() {
+function Contact({ links }) {
     return (
         <section id="contact" className={styles.contactSection}>
             <h2>Contact</h2>
@@ -11,30 +11,14 @@ function Contact() {
             </p>
 
             <ul className={styles.contactList}>
-                <li>
-                    <strong>Email:</strong>{' '}
-                    <a href="mailto:ricardozs_96@hotmail.com">ricardozs_96@hotmail.com</a>
-                </li>
-                <li>
-                    <strong>LinkedIn:</strong>{' '}
-                    <a
-                        href="https://www.linkedin.com/in/ricardo-zermeno/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        linkedin.com/in/ricardo-zermeno/
-                    </a>
-                </li>
-                <li>
-                    <strong>GitHub:</strong>{' '}
-                    <a
-                        href="https://github.com/RAZermenoSaracho"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        github.com/RAZermenoSaracho
-                    </a>
-                </li>
+                {[['LinkedIn', links.linkedin], ['GitHub', links.github]].map(([label, href]) => href && (
+                    <li key={label}>
+                        <strong>{label}:</strong>{' '}
+                        <a href={href} target="_blank" rel="noreferrer">
+                            {href.replace(/^https?:\/\//, '')}
+                        </a>
+                    </li>
+                ))}
             </ul>
         </section>
     );
