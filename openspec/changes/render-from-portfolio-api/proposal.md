@@ -1,6 +1,6 @@
 ## Why
 
-Hero, About, Skills, Experience, Education, Contact, Navbar and Footer text is hardcoded in React, so every content edit needs a commit and a Vercel deploy. Content is moving into Odoo (`razs_jobs`) and `portfolio-api` will serve it at `GET https://projects.razs.dev/portfolio` (change `serve-portfolio-from-odoo`). The site should render from that endpoint so Odoo edits go live in about 5 minutes with no redeploy.
+Hero, About (which contains Skills), Experience, Education, Contact, Navbar and Footer text is hardcoded in React, so every content edit needs a commit and a Vercel deploy. Content is moving into Odoo (`razs_jobs`) and `portfolio-api` will serve it at `GET https://projects.razs.dev/portfolio` (change `serve-portfolio-from-odoo`). The site should render from that endpoint so Odoo edits go live in about 5 minutes with no redeploy.
 
 ## What Changes
 
