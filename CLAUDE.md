@@ -21,7 +21,7 @@ React + Vite + Tailwind CSS
 ## Related services (same infra, personal macserver)
 - job_scraper (FastAPI/Selenium) → api-jobs.razs.dev (port 8420)
 - job_scraper_frontend (React/Vite) → jobs.razs.dev (port 5180)
-- cv_download (Fastify/pdfmake, in progress) → generates and serves the CV as a PDF on demand
+- CV is served from Odoo via `https://projects.razs.dev/cv` (portfolio-api proxy)
 
 ## Infra (reference)
 - pm2 via `ecosystem.config.cjs` (.cjs extension required under Node 24 to force CommonJS)
