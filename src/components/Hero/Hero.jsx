@@ -26,7 +26,7 @@ function Hero() {
             window.URL.revokeObjectURL(blobUrl);
 
             setCvStatus("idle");
-        } catch (err) {
+        } catch {
             setCvStatus("error");
         }
     };
